@@ -1,0 +1,45 @@
+@import 'aos/dist/aos.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-coffeeCream text-darkCoffee font-body;
+    background-color: #fdf6f0; /* fallback */
+    color: #4b2e2e;            /* fallback */
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1.2s ease-out both;
+  }
+
+  .animate-steam {
+    animation: steamUp 4s infinite ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes steamUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-40px) scale(1.2);
+      opacity: 0;
+    }
+  }
+}
